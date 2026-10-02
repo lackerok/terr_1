@@ -1,4 +1,5 @@
-<img width="918" height="682" alt="image" src="https://github.com/user-attachments/assets/47b46f08-2723-4e94-ab50-52e3ccf35c55" /># Задание 0
+# Задание 0
+<img width="918" height="682" alt="image" src="https://github.com/user-attachments/assets/47b46f08-2723-4e94-ab50-52e3ccf35c55" />
 <img width="688" height="99" alt="image" src="https://github.com/user-attachments/assets/9913130b-7bc3-47a9-acf6-72a16ed3ddd5" />
 
 # Задание 1
