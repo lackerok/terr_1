@@ -20,3 +20,44 @@ RtUEOOB4xPUQVCwF - пароль
 nginx не удалился из-за "keep_locally = true". Именно это значение указывает Terraform сохранить образ на диске хоста при уничтожении инфраструктуры
 
 <img width="1069" height="408" alt="image" src="https://github.com/user-attachments/assets/ec95eb3a-2d2f-450b-8151-152206d7396f" />
+
+
+Код:
+
+```
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+    }
+  }
+  required_version = "~>1.12.0" /*Многострочный комментарий.
+ Требуемая версия terraform */
+}
+provider "docker" {}
+
+#однострочный комментарий
+
+resource "random_password" "random_string" {
+  length      = 16
+  special     = false
+  min_upper   = 1
+  min_lower   = 1
+  min_numeric = 1
+}
+
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = true
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+
+  name  = "hello_world"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+```
